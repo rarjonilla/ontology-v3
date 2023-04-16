@@ -1,0 +1,224 @@
+{
+  "@context" : {
+    "Non_carbonated_beberage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_carbonated_beberage"
+    },
+    "Young_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Young_wine"
+    },
+    "Non_alcoholic_beberage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage"
+    },
+    "High_acidity_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_acidity_wine"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "Vodka" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vodka"
+    },
+    "Winery" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"
+    },
+    "Low_rated" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_rated"
+    },
+    "Whisky" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Whisky"
+    },
+    "Fish" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fish"
+    },
+    "Country" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Country"
+    },
+    "Food" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "Meat" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Meat"
+    },
+    "Medium_rated" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_rated"
+    },
+    "is_region" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#is_region",
+      "@type" : "@id"
+    },
+    "Crianza_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Crianza_wine"
+    },
+    "Great_reserve_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Great_reserve_wine"
+    },
+    "Fruit" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fruit"
+    },
+    "White_grape" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"
+    },
+    "High_rated" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_rated"
+    },
+    "Low_price" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_price"
+    },
+    "White_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_wine"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Vintage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"
+    },
+    "has_wineries" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wineries",
+      "@type" : "@id"
+    },
+    "Beer" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beer"
+    },
+    "Red_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_wine"
+    },
+    "Alcoholic_beberage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Alcoholic_beberage"
+    },
+    "has_grape" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape",
+      "@type" : "@id"
+    },
+    "Vegetables" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vegetables"
+    },
+    "Beverage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beverage"
+    },
+    "has_acidity" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity"
+    },
+    "creator" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#creator"
+    },
+    "Rose_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rose_wine"
+    },
+    "has_body" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body"
+    },
+    "Grape" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"
+    },
+    "has_price" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "vintages" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages",
+      "@type" : "@id"
+    },
+    "has_rating" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating"
+    },
+    "France" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#France"
+    },
+    "Sparkling_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Sparkling_wine"
+    },
+    "produced_by" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produced_by",
+      "@type" : "@id"
+    },
+    "Vintage_year" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"
+    },
+    "Low_acidity_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_acidity_wine"
+    },
+    "Fermentatated_alcoholic_beberage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage"
+    },
+    "Medium_bodied_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_bodied_wine"
+    },
+    "Destilated_alcoholic_beberage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Destilated_alcoholic_beberage"
+    },
+    "has_number_reviews" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_number_reviews",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "High_price" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_price"
+    },
+    "Light_bodied_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Light_bodied_wine"
+    },
+    "produces" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produces",
+      "@type" : "@id"
+    },
+    "vintage_of" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintage_of",
+      "@type" : "@id"
+    },
+    "Medium_price" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_price"
+    },
+    "Spain" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Spain"
+    },
+    "Full_bodied_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Full_bodied_wine"
+    },
+    "has_vintage_year" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage_year",
+      "@type" : "@id"
+    },
+    "year_value" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_value",
+      "@type" : "http://www.w3.org/2001/XMLSchema#gYear"
+    },
+    "Medium_acidity_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_acidity_wine"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Wine_region" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"
+    },
+    "has_wine_descriptor" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wine_descriptor"
+    },
+    "vintages_of_year" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages_of_year",
+      "@type" : "@id"
+    },
+    "Reserve_wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserve_wine"
+    },
+    "grape_used_for" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#grape_used_for",
+      "@type" : "@id"
+    },
+    "has_vintage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage"
+    },
+    "Red_grape" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"
+    },
+    "Carbonated_beverage" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Carbonated_beverage"
+    },
+    "Wine" : {
+      "@id" : "http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"
+    }
+  }
+}

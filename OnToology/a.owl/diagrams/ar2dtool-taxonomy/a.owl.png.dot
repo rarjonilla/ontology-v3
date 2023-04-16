@@ -1,0 +1,46 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "spain-wine-ontology:Light_bodied_wine" "spain-wine-ontology:White_wine" "spain-wine-ontology:Full_bodied_wine" "spain-wine-ontology:White_grape" "spain-wine-ontology:Beverage" "spain-wine-ontology:Destilated_alcoholic_beberage" "spain-wine-ontology:High_price" "spain-wine-ontology:Spain" "spain-wine-ontology:Vodka" "spain-wine-ontology:High_acidity_wine" "spain-wine-ontology:High_rated" "spain-wine-ontology:Low_rated" "spain-wine-ontology:Vegetables" "spain-wine-ontology:Rose_wine" "spain-wine-ontology:Medium_bodied_wine" "spain-wine-ontology:Low_price" "spain-wine-ontology:Crianza_wine" "spain-wine-ontology:Meat" "spain-wine-ontology:Fish" "spain-wine-ontology:Whisky" "spain-wine-ontology:Wine_region" "spain-wine-ontology:Non_carbonated_beberage" "spain-wine-ontology:France" "spain-wine-ontology:Wine" "spain-wine-ontology:Grape" "spain-wine-ontology:Country" "spain-wine-ontology:Low_acidity_wine" "spain-wine-ontology:Young_wine" "spain-wine-ontology:Red_grape" "spain-wine-ontology:Beer" "spain-wine-ontology:Reserve_wine" "spain-wine-ontology:Medium_acidity_wine" "spain-wine-ontology:Non_alcoholic_beberage" "spain-wine-ontology:Medium_rated" "spain-wine-ontology:Great_reserve_wine" "spain-wine-ontology:Sparkling_wine" "spain-wine-ontology:Carbonated_beverage" "spain-wine-ontology:Medium_price" "spain-wine-ontology:Red_wine" "spain-wine-ontology:Fruit" "spain-wine-ontology:Fermentatated_alcoholic_beberage" "spain-wine-ontology:Vintage" "spain-wine-ontology:Food" "spain-wine-ontology:Alcoholic_beberage" ; /*classes style*/
+	"spain-wine-ontology:White_grape" -> "spain-wine-ontology:Grape" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Sparkling_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Red_grape" -> "spain-wine-ontology:Grape" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Red_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Carbonated_beverage" -> "spain-wine-ontology:Non_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Medium_bodied_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Meat" -> "spain-wine-ontology:Food" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Wine_region" -> "spain-wine-ontology:Spain" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:White_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Fruit" -> "spain-wine-ontology:Food" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Spain" -> "spain-wine-ontology:Country" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:High_rated" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Vegetables" -> "spain-wine-ontology:Food" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Medium_price" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Low_price" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Alcoholic_beberage" -> "spain-wine-ontology:Beverage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Non_carbonated_beberage" -> "spain-wine-ontology:Non_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Fermentatated_alcoholic_beberage" -> "spain-wine-ontology:Alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Grape" -> "spain-wine-ontology:Fruit" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Reserve_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Non_alcoholic_beberage" -> "spain-wine-ontology:Beverage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Low_acidity_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Medium_acidity_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:High_acidity_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Vodka" -> "spain-wine-ontology:Destilated_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Rose_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Light_bodied_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Beer" -> "spain-wine-ontology:Fermentatated_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:France" -> "spain-wine-ontology:Country" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Medium_rated" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Fish" -> "spain-wine-ontology:Food" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Full_bodied_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Destilated_alcoholic_beberage" -> "spain-wine-ontology:Alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Low_rated" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:High_price" -> "spain-wine-ontology:Vintage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Great_reserve_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Whisky" -> "spain-wine-ontology:Destilated_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Crianza_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Wine" -> "spain-wine-ontology:Fermentatated_alcoholic_beberage" [ label = "rdfs:subClassOf" ];
+	"spain-wine-ontology:Young_wine" -> "spain-wine-ontology:Wine" [ label = "rdfs:subClassOf" ];
+
+}
