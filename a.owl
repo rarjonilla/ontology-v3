@@ -1,0 +1,2817 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology/"
+     xml:base="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:spain-wine-ontology="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology/1.0.0"/>
+        <rdfs:comment xml:lang="ca">Ontología de vins d&apos;Espanya creada per a la PAC 2 de l&apos;assignatura &quot;Representament del coneixement&quot;</rdfs:comment>
+        <rdfs:creator>Rubén Arjonilla Zamora (rarjonilla)</rdfs:creator>
+        <rdfs:label>Ontología de vins d&apos;Espanya</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#grape_used_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#grape_used_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Relació de vins el·laborats amb una varietat de raïm</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"/>
+        <rdfs:comment xml:lang="ca">Varietat de raïm amb la que s&apos;ha el·laborat el vi</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage_year -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage_year">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages_of_year"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <rdfs:comment>Relació entre l&apos;anyada d&apos;un vi i l&apos;any d&apos;el·laboració</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wineries -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wineries">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#is_region"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <rdfs:comment>Cellers d&apos;una regió</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#is_region -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#is_region">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+        <rdfs:comment xml:lang="ca">Regió d&apos;un celler</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produced_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produced_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produces"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <rdfs:comment xml:lang="ca">Celler productor d&apos;un vi</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produces -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produces">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Relació de vins produïts per un celler</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintage_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintage_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Relació entre l&apos;anyada d&apos;un vi i el vi</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Anyades d&apos;un vi</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages_of_year -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintages_of_year">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Vins el·laborats en una anyada</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wine_descriptor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="ca">Acidesa del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wine_descriptor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="ca">Cos del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_number_reviews -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_number_reviews">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="ca">Nombre d&apos;anàlisis per a l&apos;anyada del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="ca">Preu per a l&apos;anyada del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="ca">Valoració per a l&apos;anyada del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment xml:lang="ca">Anyada d&apos;un vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wine_descriptor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_wine_descriptor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Propietats del vi</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment>Any de l&apos;anyada</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Alcoholic_beberage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Alcoholic_beberage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beverage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Begudes alcohòliques&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Cervesa&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beverage">
+        <rdfs:comment xml:lang="ca">Concepte &quot;Begudes&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Carbonated_beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Carbonated_beverage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_carbonated_beberage"/>
+        <rdfs:comment>Concepte &quot;Begudes carbonatades&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Country">
+        <rdfs:comment xml:lang="ca">Concepte &quot;País&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Crianza_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Crianza_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi criança&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Destilated_alcoholic_beberage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Destilated_alcoholic_beberage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Alcoholic_beberage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Begudes alcohòliques destilades&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Alcoholic_beberage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Begudes alcohòloques fermentades&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food"/>
+        <rdfs:comment>Concepte &quot;Peix&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food">
+        <rdfs:comment>Concepte &quot;Aliments&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#France -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#France">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Country"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Spain"/>
+        <rdfs:comment>Concepte &quot;País Francés&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food"/>
+        <rdfs:comment>Concepte &quot;Fruita&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Full_bodied_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Full_bodied_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb molt cos&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fruit"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Raïm&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Great_reserve_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Great_reserve_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi gran reserva&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_acidity_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_acidity_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb acidesa alta&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Concepte &quot;Anyada del vi amb preu elevat&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_rated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_rated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Anyada del vi amb valoració alta&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Light_bodied_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Light_bodied_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb cos lleuger&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_acidity_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_acidity_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb poca acidesa&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Concepte &quot;Anyada del vi amb preu baix&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_rated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_rated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Concepte &quot;Anyada del vi amb valoració baixa&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food"/>
+        <rdfs:comment>Concepte &quot;Carn&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_acidity_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_acidity_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb acidesa mitjana&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_bodied_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_bodied_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment>Concepte &quot;Vi amb cos mitjà&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment>Concepte &quot;Anyada del vi amb preu mitjà&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_rated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_rated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Anyada del vi amb valoració mitja&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Beverage"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Begudes no alcohòliques&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_carbonated_beberage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_carbonated_beberage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Non_alcoholic_beberage"/>
+        <rdfs:comment>Concepte &quot;Begudes no carbonatades&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Raïm negre&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi negre&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserve_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserve_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi reserva&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rose_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rose_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi rosat&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Spain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Country"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;País espanyol&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Sparkling_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Sparkling_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi espumós&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vegetables -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vegetables">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Food"/>
+        <rdfs:comment>Concepte &quot;Verdures&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_vintage_year"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#vintage_of"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_number_reviews"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Anyada del vi&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year">
+        <rdfs:comment>Concepte &quot;Anyada&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Destilated_alcoholic_beberage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Whisky"/>
+        <rdfs:comment>Concepte &quot;Vodka&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Whisky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Whisky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Destilated_alcoholic_beberage"/>
+        <rdfs:comment>Concepte &quot;Whisky&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Raïm blanc&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi blanc&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fermentatated_alcoholic_beberage"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#produced_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="ca">concepte &quot;Vi&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Spain"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Regions vinícoles&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#is_region"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Celler&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Young_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Young_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <rdfs:comment xml:lang="ca">Concepte &quot;Vi jove&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Allende -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Allende">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bierzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bierzo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bodegas_Gama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bodegas_Gama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cabernet_Sauvignon_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cabernet_Sauvignon_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_Red_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Allende"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2002"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">61</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2004"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2006 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2006">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2006"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">279</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">53.35</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2008"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">195</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.3</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2009">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2009"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">194</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">125.97</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2010"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Calvario_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">125.97</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Verdejo_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Ossian"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">162</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">144.78</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel_2018 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel_2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2018"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Capitel"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">107</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.51</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castilla_y_León -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castilla_y_León">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castillo_Perelada -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castillo_Perelada">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Empordà"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Empordà -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Empordà">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Familia_Torres -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Familia_Torres">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Penedès"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Syrah_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castillo_Perelada"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet_2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2014"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">75</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">99</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Finca_Garbet"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">32</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">89.9</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Frank_Ghery_Selection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Frank_Ghery_Selection">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Tempranillo_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Marqués_de_Riscal"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Frank_Ghery_Selection_2001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Frank_Ghery_Selection_2001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2001"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Frank_Ghery_Selection"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">124</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">301</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Gines_Liebana_Pedro_Ximenez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Gines_Liebana_Pedro_Ximenez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Pedro_Ximenez_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Toro_Albala"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Gines_Liebana_Pedro_Ximenez_1910 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Gines_Liebana_Pedro_Ximenez_1910">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_1910"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Gines_Liebana_Pedro_Ximenez"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">701.05</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grenache_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grenache_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Marqués_de_Riscal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Marqués_de_Riscal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_White_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Allende"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.5</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja_2017 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja_2017">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2017"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Martiries_Rioja"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">33</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">139.63</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cabernet_Sauvignon_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Familia_Torres"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2010"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2788</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.4</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2013">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2013"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2911</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.33</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1797</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Mas_La_Plana_Cabernet_Sauvignon"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">964</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.26</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Montilla-Moriles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Montilla-Moriles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#NV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#NV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Grenache_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bodegas_Gama"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius_2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2014"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">34</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.5</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Octogenarius"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.9</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Ossian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Ossian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Castilla_y_León"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Pedro_Ximenez_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Pedro_Ximenez_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Penedès -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Penedès">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Recaredo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Recaredo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Recaredo"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature_2008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature_2008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2008"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">69</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.9</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature_2011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature_2011">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2011"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Particular_de_Recaredo_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">69</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65.05</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.7</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Vermouth_Rojo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Vermouth_Rojo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vinos_Guerra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Vermouth_Rojo_NV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Vermouth_Rojo_NV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#NV"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserva_Vermouth_Rojo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">166</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.95</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_Red_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_Red_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_White_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rioja_White_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Cava_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Recaredo"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2013">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2013"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">149</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.41</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2014"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">166</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.41</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">54</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33.78</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Serrall_del_Vell_Brut_Nature"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">34.56</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Syrah_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Syrah_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Tempranillo_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Tempranillo_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Toro_Albala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Toro_Albala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Montilla-Moriles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Verdejo_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Verdejo_Grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vinos_Guerra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vinos_Guerra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Winery"/>
+        <spain-wine-ontology:is_region rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Bierzo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+        <spain-wine-ontology:has_grape rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Verdejo_Grape"/>
+        <spain-wine-ontology:produced_by rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Ossian"/>
+        <spain-wine-ontology:has_acidity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_acidity>
+        <spain-wine-ontology:has_body rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</spain-wine-ontology:has_body>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">769</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1181</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2017 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2017">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2017"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">449</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2018 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2018"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">885</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.18</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2019 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo_2019">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+        <spain-wine-ontology:has_vintage_year rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2019"/>
+        <spain-wine-ontology:vintage_of rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Viñas_Viejas_Verdejo"/>
+        <spain-wine-ontology:has_number_reviews rdf:datatype="http://www.w3.org/2001/XMLSchema#int">219</spain-wine-ontology:has_number_reviews>
+        <spain-wine-ontology:has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">26.9</spain-wine-ontology:has_price>
+        <spain-wine-ontology:has_rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</spain-wine-ontology:has_rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_1910 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_1910">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1910</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2001</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2002</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2004</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2006 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2006">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2006</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2008</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2009">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2009</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2010</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2011">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2011</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2013">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2013</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2014</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2015</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2016</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2017 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2017">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2018 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2019 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#year_2019">
+        <rdf:type rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage_year"/>
+        <spain-wine-ontology:year_value rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2019</spain-wine-ontology:year_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Crianza_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Great_reserve_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Reserve_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Young_wine"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fish"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Fruit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Meat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vegetables"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Full_bodied_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Light_bodied_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_bodied_wine"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_acidity_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_acidity_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_acidity_wine"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_price"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_price"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_price"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_rated"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_rated"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_rated"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Rose_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Sparkling_wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_wine"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#w">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#v">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_rated"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="urn:swrl:var#r"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_rated"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_rating"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_rated"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_grape"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#White_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_acidity_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#a"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_acidity_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_acidity"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_acidity_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#b"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Full_bodied_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#b"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="urn:swrl:var#b"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_bodied_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_body"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#b"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Light_bodied_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_grape"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_grape"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Red_wine"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#High_price"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Medium_price"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Vintage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#has_price"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/roko/ontologies/2023/3/spain-wine-ontology#Low_price"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
